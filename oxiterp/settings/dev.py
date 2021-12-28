@@ -5,16 +5,10 @@ from oxiterp.settings.base import *
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'carservicesena',
-        'USER': 'postgres',
-        'PASSWORD': 'oxit2016',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'comitfy-health', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
     }
-
-
-
 }
 
 GCM_APIKEY = "AAAAEgdR9KM:APA91bGJbWnT6MzzKIxRi9aAkfgyWCCRKxMNypBgpVjiM0ywTTU3xUyyK4_8Q3O8j-vVeY_k_genzinOnul2wDJKWQa3cnhuaHvG-3BVmdnjq3H1da1DHeKGjbF9ykimR-DlsC2ktnUw"

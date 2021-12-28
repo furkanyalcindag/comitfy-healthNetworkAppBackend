@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, re_path
-from django.conf.urls import url, include
+
+from django.urls import include, re_path
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,14 +34,12 @@ from accounts import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
 
-    path('accounts/', include('accounts.urls')),
-    path('', views.login, name='index'),
+    re_path('accounts/', include('accounts.urls')),
+    re_path('', views.login, name='index'),
 
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/token/', CustomTokenObtainPairView.as_view()),
-    path('api/token/refresh', TokenRefreshView.as_view()),
-
-    path('car-service/', include('carService.urls')),
+    re_path('api-auth/', include('rest_framework.urls')),
+    re_path('api/token/', CustomTokenObtainPairView.as_view()),
+    re_path('api/token/refresh', TokenRefreshView.as_view())
 
 ]
 
