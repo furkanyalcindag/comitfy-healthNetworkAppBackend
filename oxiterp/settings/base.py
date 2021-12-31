@@ -41,13 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-   
-
     # own
-
     'rest_framework',
     'accounts',
     'drf_api_logger',
+    'healthApp'
 
 ]
 

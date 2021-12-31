@@ -25,6 +25,7 @@ from rest_framework import routers
 from oxiterp.views import CustomTokenObtainPairView
 from rest_framework_simplejwt.views import TokenRefreshView
 
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 import accounts
@@ -34,12 +35,13 @@ from accounts import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
 
-    re_path('accounts/', include('accounts.urls')),
-    re_path('', views.login, name='index'),
+    path('accounts/', include('accounts.urls')),
+    path('', views.login, name='index'),
 
-    re_path('api-auth/', include('rest_framework.urls')),
-    re_path('api/token/', CustomTokenObtainPairView.as_view()),
-    re_path('api/token/refresh', TokenRefreshView.as_view())
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/token/', CustomTokenObtainPairView.as_view()),
+    path('api/token/refresh', TokenRefreshView.as_view()),
+    path('health/', include('healthApp.urls'))
 
 ]
 
